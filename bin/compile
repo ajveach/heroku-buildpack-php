@@ -33,6 +33,9 @@ mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
 
+# set ownership of tmp directory to www-data
+chown -R www-data /app/www/app/tmp
+
 # keep Procfile
 if [ -f www/Procfile ]; then
   mv www/Procfile .
