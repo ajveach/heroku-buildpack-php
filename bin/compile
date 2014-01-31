@@ -76,7 +76,3 @@ chmod +x boot.sh
 
 # clean the cache
 rm -rf $CACHE_DIR
-
-# set ownership of tmp directory to www-data
-echo $BUILD_DIR
-chmod -R 777 $BUILD_DIR/www/app/tmp
