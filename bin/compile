@@ -75,7 +75,7 @@ EOF
 chmod +x boot.sh
 
 # set ownership of tmp directory to www-data
-mkdir /app/www/app/tmp
+mkdir -p /app/www/app/tmp
 chmod -R 777 /app/www/app/tmp
 
 # clean the cache
