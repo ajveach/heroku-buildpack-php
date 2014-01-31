@@ -18,7 +18,7 @@ APACHE_PATH="apache"
 PHP_VERSION="5.3.27"
 PHP_PATH="php"
 
-CAKEPHP_APP_TMP_PATH="www/tmp"
+CAKEPHP_APP_TMP_PATH="www/app/tmp"
 
 BIN_DIR=$(dirname $0)
 BUILD_DIR=$1
