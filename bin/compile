@@ -75,8 +75,8 @@ EOF
 chmod +x boot.sh
 
 # set ownership of tmp directory to www-data
-sudo mkdir -p /app/www/app/tmp
-sudo chown -R www-data /app/www/app/tmp
+mkdir /app/www/app/tmp
+chmod -R 777 /app/www/app/tmp
 
 # clean the cache
 rm -rf $CACHE_DIR
