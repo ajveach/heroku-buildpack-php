@@ -34,6 +34,8 @@ mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
 
 # set ownership of tmp directory to www-data
+echo $CACHE_DIR
+mkdir -p /app/www/app/tmp
 chown -R www-data /app/www/app/tmp
 
 # keep Procfile
