@@ -33,11 +33,6 @@ mkdir -p $CACHE_DIR/www
 mv * $CACHE_DIR/www
 mv $CACHE_DIR/www .
 
-# set ownership of tmp directory to www-data
-echo $CACHE_DIR
-mkdir -p /app/www/app/tmp
-chown -R www-data /app/www/app/tmp
-
 # keep Procfile
 if [ -f www/Procfile ]; then
   mv www/Procfile .
@@ -78,6 +73,10 @@ exec /app/apache/bin/httpd -DNO_DETACH
 EOF
 
 chmod +x boot.sh
+
+# set ownership of tmp directory to www-data
+sudo mkdir -p /app/www/app/tmp
+sudo chown -R www-data /app/www/app/tmp
 
 # clean the cache
 rm -rf $CACHE_DIR
