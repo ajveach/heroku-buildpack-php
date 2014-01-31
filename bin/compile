@@ -18,6 +18,8 @@ APACHE_PATH="apache"
 PHP_VERSION="5.3.27"
 PHP_PATH="php"
 
+CAKEPHP_APP_TMP_PATH="www/tmp"
+
 BIN_DIR=$(dirname $0)
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -57,6 +59,16 @@ cp $LP_DIR/conf/php.ini php
 # make php available on bin
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
+
+# make tmp dir
+echo "-----> Creating CakePHP tmp directories"
+mkdir -p $CAKEPHP_APP_TMP_PATH/cache/models
+mkdir -p $CAKEPHP_APP_TMP_PATH/cache/persistent
+mkdir -p $CAKEPHP_APP_TMP_PATH/cache/views
+mkdir -p $CAKEPHP_APP_TMP_PATH/logs
+mkdir -p $CAKEPHP_APP_TMP_PATH/sessions
+mkdir -p $CAKEPHP_APP_TMP_PATH/tests
+chmod -R 777 $CAKEPHP_APP_TMP_PATH
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
